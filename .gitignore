@@ -1,0 +1,54 @@
+# Python
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+ENV/
+env/
+venv/
+ENV.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# GCP credentials (NEVER commit these!)
+*.json
+credentials/
+service-account-*.json
+
+# Environment variables
+.env
+.env.local
+
+# Temporary files
+/tmp/
+*.csv
+*.log
+
+# Project-specific
+transactions_batch.csv

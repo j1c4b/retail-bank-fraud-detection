@@ -1,0 +1,64 @@
+{
+  "type": "record",
+  "name": "Transaction",
+  "namespace": "com.wellsfargo.fraud",
+  "doc": "Bank transaction record for fraud detection analytics",
+  "fields": [
+    {
+      "name": "transaction_id",
+      "type": "string",
+      "doc": "Unique transaction identifier (UUID)"
+    },
+    {
+      "name": "account_id",
+      "type": "string",
+      "doc": "Bank account identifier"
+    },
+    {
+      "name": "card_number",
+      "type": "string",
+      "doc": "Credit card number (PII - mask before storage in production)"
+    },
+    {
+      "name": "masked_card_number",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "DLP-masked credit card number (safe for analytics)"
+    },
+    {
+      "name": "amount",
+      "type": "double",
+      "doc": "Transaction amount in USD"
+    },
+    {
+      "name": "merchant",
+      "type": "string",
+      "doc": "Merchant name"
+    },
+    {
+      "name": "location",
+      "type": "string",
+      "doc": "Transaction location (city)"
+    },
+    {
+      "name": "transaction_timestamp",
+      "type": "string",
+      "doc": "Event time - when transaction actually occurred (ISO 8601)"
+    },
+    {
+      "name": "operation_type",
+      "type": {
+        "type": "enum",
+        "name": "OperationType",
+        "symbols": ["INSERT", "UPDATE", "DELETE"]
+      },
+      "default": "INSERT",
+      "doc": "CDC operation type"
+    },
+    {
+      "name": "ingestion_timestamp",
+      "type": "string",
+      "doc": "Arrival time - when event was ingested (ISO 8601)"
+    }
+  ]
+}

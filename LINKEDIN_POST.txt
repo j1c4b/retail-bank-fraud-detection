@@ -1,0 +1,106 @@
+🚀 GCP Real-Time Fraud Detection Pipeline - Production-Ready Architecture
+
+I built a complete fraud detection pipeline on Google Cloud Platform that demonstrates enterprise-level data engineering skills:
+
+📊 PROJECT OVERVIEW
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+A real-time bank transaction fraud detection system built on GCP, simulating production-grade architecture for Retail Bank technical interviews.
+
+🎯 KEY FEATURES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ Real-time streaming (Pub/Sub → BigQuery)
+✅ Cost-optimized batch processing (GCS → BigQuery)
+✅ Apache Avro format (schema evolution, columnar storage)
+✅ Cloud DLP integration (PCI-DSS compliant PII masking)
+✅ Late-arriving data handling (event time vs. arrival time)
+✅ Fraud simulation (5% high-value transactions)
+✅ Automated setup & teardown scripts
+
+🏗️ ARCHITECTURE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Streaming: Python Generator → Pub/Sub → DLP Masking → BigQuery
+Batch:     Python Generator → Avro Files → GCS → BigQuery
+Security:  Cloud DLP API masks credit cards (4532************)
+Analytics: Event-time partitioned tables with account clustering
+
+💡 TECHNICAL HIGHLIGHTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Event-time partitioning for late-arriving data (5-10 min delays)
+• Avro schema evolution for production deployments
+• FREE batch loads vs. paid streaming (cost optimization)
+• Column-level security ready (Phase 5)
+• Professional DevOps automation (setup.sh/cleanup.sh)
+
+🛠️ TECH STACK
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Google Cloud Pub/Sub (streaming buffer)
+• Google BigQuery (analytics data warehouse)
+• Google Cloud Storage (batch staging)
+• Google Cloud DLP (PII masking)
+• Apache Avro (schema evolution)
+• Python 3.11 (Faker, google-cloud libraries)
+
+📈 PRODUCTION READY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• 6 pipeline configurations (streaming/batch × CSV/Avro × DLP)
+• Interactive setup script with verification (zero to prod in 2 min)
+• Complete cleanup script (safe resource teardown)
+• Security best practices (Application Default Credentials)
+• Comprehensive documentation (README.md)
+
+🚀 TRY IT YOURSELF
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Clone the repository:
+   git clone https://github.com/j1c4b/retail-bank-sim.git
+   cd retail-bank-sim
+
+2. Run automated setup:
+   ./setup.sh
+
+3. Test streaming pipeline:
+   python transaction_generator.py  # Terminal 1
+   python bq_consumer_dlp.py        # Terminal 2
+
+4. Or test batch pipeline (production):
+   python batch_generator_avro_dlp.py
+
+5. Clean up resources:
+   ./cleanup.sh
+
+📊 RESULTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✓ Real-time fraud detection with <1 second latency
+✓ PII masked before storage (PCI-DSS compliant)
+✓ Late-arriving data correctly partitioned by event time
+✓ Cost-optimized batch processing (FREE BigQuery loads)
+✓ Query-ready analytics in BigQuery
+
+🔗 GitHub Repository
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+https://github.com/j1c4b/retail-bank-sim
+
+💼 SKILLS DEMONSTRATED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ Google Cloud Platform (GCP)
+✅ Stream Processing (Pub/Sub)
+✅ Data Warehousing (BigQuery)
+✅ Data Security (Cloud DLP, PII masking)
+✅ Schema Design (Avro, partitioning, clustering)
+✅ Python Development (google-cloud SDKs)
+✅ DevOps Automation (Bash scripting)
+✅ Cost Optimization (batch vs. streaming trade-offs)
+✅ Real-time Analytics
+✅ CDC Pattern Implementation
+
+📌 USE CASES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Fraud detection in financial services
+• Real-time transaction monitoring
+• PCI-DSS compliant data pipelines
+• Cost-optimized analytics workflows
+• Late-data handling for distributed systems
+
+Built for Retail Bank Database Engineering interview preparation.
+Demonstrates production-grade CDC pipeline for real-time fraud analytics on GCP.
+
+#GCP #DataEngineering #BigQuery #CloudComputing #FraudDetection #PubSub #Python #Avro #DataPipeline #WellsFargo #TechInterview
