@@ -52,3 +52,6 @@ service-account-*.json
 
 # Project-specific
 transactions_batch.csv
+
+# Personal/LinkedIn content (keep local only)
+LINKEDIN_POST.txt
